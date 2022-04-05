@@ -1,0 +1,17 @@
+{
+  "name": "clase04",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "star": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "main": "sever.js",
+  "description": "",
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
