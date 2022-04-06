@@ -1,0 +1,19 @@
+{
+  "name": "clase05",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "app.js",
+  "scripts": {
+    "server": "nodemon --ignore data/ --ignore public/ app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "2.0.15"
+  },
+  "dependencies": {
+    "express": "4.17.3"
+  }
+}
