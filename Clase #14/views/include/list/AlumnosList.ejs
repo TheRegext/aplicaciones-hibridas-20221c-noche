@@ -1,0 +1,8 @@
+<h2>Lista de Alumnos</h2>
+<ul>
+    <% for (let i=0; i < alumnos.length; i++) { %>
+        <li>
+            <%- include('AlumnosItem', alumnos[i]) %>
+        </li>
+    <% } %>
+</ul>

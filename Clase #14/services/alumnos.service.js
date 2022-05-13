@@ -96,10 +96,36 @@ async function replace (id, alumnoData) {
     })
 }
 
+async function update (id, alumnoData) {
+  let alumno = null
+  return find()
+    .then(function (alumnos) {
+      let index = -1
+      for (let i = 0; i < alumnos.length; i++) {
+        if (alumnos[i].id === id) {
+          index = i
+        }
+      }
+      if (index !== -1) {
+        alumno = alumnos[index] = {
+          ...alumnos[index],
+          ...alumnoData,
+          id
+        }
+
+        return fs.promises.writeFile('./data/alumnos.json', JSON.stringify(alumnos))
+      }
+    })
+    .then(function () {
+      return alumno
+    })
+}
+
 export {
   findByID,
   find,
   create,
   remove,
-  replace
+  replace,
+  update
 }

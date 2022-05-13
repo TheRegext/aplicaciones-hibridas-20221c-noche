@@ -20,6 +20,7 @@ route.get('/api/alumnos/:idAlumno', ApiController.getByID)
 route.delete('/api/alumnos/:idAlumno', ApiController.remove)
 
 route.put('/api/alumnos/:idAlumno', ApiController.replace)
+route.patch('/api/alumnos/:idAlumno', ApiController.update)
 
 // req.params.idAlumno --> ####
 // req.params.idMateria --> ####

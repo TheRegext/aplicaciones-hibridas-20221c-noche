@@ -10,13 +10,7 @@
 
 <body>
     <a href="/nuevo.html">Agregar Nuevo</a>
-    <ul>
-        <% for (let i=0; i < alumnos.length; i++) { %>
-            <li>
-                Nombre: <%= alumnos[i].name %> <a href="/alumnos/ver?id=<%=alumnos[i].id%>">Ver</a>
-            </li>
-        <% } %>
-    </ul>
+    <%- include('include/list/AlumnosList', {alumnos})%>
 </body>
 
 </html>
