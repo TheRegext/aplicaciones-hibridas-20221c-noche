@@ -27,6 +27,7 @@ class Contador{
 
 
 const con1 = new Contador()
+
 const con2 = new Contador()
 
 /*
