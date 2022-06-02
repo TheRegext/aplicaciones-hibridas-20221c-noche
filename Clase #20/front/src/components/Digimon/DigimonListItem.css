@@ -1,0 +1,12 @@
+li.digimon-list-item{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+li.digimon-list-item img{
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    object-position: center;
+}
