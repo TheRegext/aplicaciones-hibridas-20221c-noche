@@ -1,16 +1,17 @@
+import PropTypes from 'prop-types'
 import {useState, useEffect} from 'react'
 import './contador.css'
 // Component funcional 
 // Funcion constructora
-function Contador(pepe){
-    let [cant, setCant] = useState(pepe.initial)
+function Contador({initial, increment}){
+    let [cant, setCant] = useState(initial)
     let [valor, setValor] = useState(0)
 
     function handleClick(){
-        setCant(cant + pepe.increment )
+        setCant(cant + increment )
     }
     function handleClick2(){
-        setValor(valor + pepe.increment )
+        setValor(valor + increment )
     }
 
     useEffect(()=>{
@@ -23,12 +24,6 @@ function Contador(pepe){
         }, 1000)
     }, [])
 
-
-
-
-/*
-    
-*/
     return (
         <div className="contador dark">
             Valor: {cant} - {valor}
@@ -37,5 +32,16 @@ function Contador(pepe){
         </div>
     )
 }
+
+Contador.defaultProps = {
+    initial: 0,
+}
+
+Contador.propTypes = {
+    initial: PropTypes.number,
+    increment: PropTypes.number.isRequired,
+    type: PropTypes.oneOf(['admin','user', 'guest']).isRequired
+}
+
 
 export default Contador

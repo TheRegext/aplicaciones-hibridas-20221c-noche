@@ -1,13 +1,10 @@
-import Contador from './components/Contador'
-import DigimonList from './components/Digimon/DigimonList';
-
+import ProjectList from "./components/Projects/ProjectsList";
 function App() {
 
   return (
     <div>
-      <DigimonList />
+      <ProjectList />
     </div>
-
   );
 }
 
