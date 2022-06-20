@@ -1,9 +1,9 @@
-import { useState } from "react";
+import  React,{ useState } from "react";
 import PropTypes from "prop-types";
 
 function ProjectForm({onSubmit, buttonText, project}){
-    const [name, setName] = useState(project?.name || "");
-    const [description, setDescription] = useState(project?.description || "");
+    const [name, setName] = useState("");
+    const [description, setDescription] = useState("");
 
     function handleSubmit(event){
         event.preventDefault();

@@ -1,22 +1,32 @@
 
 async function find(){
-    const projects  = JSON.parse(localStorage.getItem('projects')) || [];
-    return projects
+    return fetch('http://localhost:2022/api/projects')
+    .then(response => response.json())
 }
 
 async function create(project){
-    const projects  = JSON.parse(localStorage.getItem('projects')) || []
-    const projectNew = {...project, id: projects.length + 1}
-    
-    projects.push(projectNew)
+    return fetch('http://localhost:2022/api/projects', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(project)
+    }).then(response => response.json())
+}
 
-    localStorage.setItem('projects', JSON.stringify(projects))
+async function findById(id){
+    return fetch(`http://localhost:2022/api/projects/${id}`)
+    .then(response => response.json())
+}
 
-    return projectNew
+async function findByName(name){
+    return fetch(`http://localhost:2022/api/projects/${name}`)
+    .then(response => response.json())
 }
 
 
 export {
     find,
-    create
+    create,
+    findById
 }

@@ -1,7 +1,7 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import * as ProjectService from "../../Services/projects.service";
-import ProjectForm from "./ProjectForm";
-
+import ProjectForm from "./ProjectForm"
+import {Link} from "react-router-dom"
 
 function ProjectList({}){
     const [projects, setProjects] = useState([]);
@@ -21,7 +21,7 @@ function ProjectList({}){
         <div>
             <ProjectForm onSubmit={saveProject} />
             <ul>
-                {projects.map((project, i) => <li key={i}>{project.name}</li>)}
+                {projects.map((project, i) => <li key={i}><Link to={`/projects/${project._id}`}>{project.name}</Link></li>)}
             </ul>
 
         </div>
