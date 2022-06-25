@@ -1,5 +1,6 @@
 import express from 'express'
 import ProjectRoute from './routes/projects.route.js'
+import UserRoute from './routes/users.route.js'
 import cors from 'cors'
 
 const app = express() // crea el objeto de la aplicacion
@@ -7,6 +8,7 @@ app.use(cors()) // permite que se puedan hacer peticiones desde cualquier origen
 
 app.use(express.json())
 app.use('/', ProjectRoute)
+app.use('/api/', UserRoute)
 
 // Escucha el puerto y si funcioa, ejecuta la funcion
 app.listen(2022, function () {
