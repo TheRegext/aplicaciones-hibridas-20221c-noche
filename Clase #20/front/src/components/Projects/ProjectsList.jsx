@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
 import * as ProjectService from "../../Services/projects.service";
 import ProjectForm from "./ProjectForm"
-import {Link} from "react-router-dom"
+import ProjectItem from "./ProjectItem"
+
+import {ProjectContext} from "../../Context/ProjectContext"
 
 function ProjectList({}){
     const [projects, setProjects] = useState([]);
@@ -18,13 +20,13 @@ function ProjectList({}){
     }
 
     return (
-        <div>
+        <ProjectContext.Provider value={{projects, saveProject}} >
             <ProjectForm onSubmit={saveProject} />
             <ul>
-                {projects.map((project, i) => <li key={i}><Link to={`/projects/${project._id}`}>{project.name}</Link></li>)}
+                {projects.map((project, i) => <ProjectItem key={i} project={project}/>)}
             </ul>
 
-        </div>
+        </ProjectContext.Provider>
     )
 }
 
